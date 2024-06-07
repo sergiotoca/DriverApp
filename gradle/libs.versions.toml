@@ -13,7 +13,9 @@ googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.0.0"
 rxAndroid = "2.1.1"
 rxJava = "2.2.19"
-firebaseUiAuth = "6.2.1"
+firebaseUiAuth = "8.0.2"
+firebaseDatabase = "19.3.0"
+firebaseDatabaseKtx = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,7 +29,9 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxAndroid" }
 rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxJava" }
-firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version = "8.0.2" }
+firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebaseUiAuth" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
