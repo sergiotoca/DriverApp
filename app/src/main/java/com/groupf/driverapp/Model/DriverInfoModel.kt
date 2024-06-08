@@ -1,4 +1,4 @@
-package com.example.driverapp.Model
+package com.groupf.driverapp.Model
 
 class DriverInfoModel {
     var firstName: String=""

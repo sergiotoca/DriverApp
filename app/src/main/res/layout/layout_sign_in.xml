@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#D1EBF8"
-            android:drawableStart="@drawable/ic_phone_back_24dp"
+            android:drawableLeft="@drawable/ic_phone_back_24dp"
             android:text="Sign In with Phone"
             android:textColor="@android:color/black"
             />
@@ -35,7 +35,7 @@
             android:background="#D1EBF8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawableStart="@drawable/fui_ic_googleg_color_24dp"
+            android:drawableLeft="@drawable/fui_ic_googleg_color_24dp"
             android:text="Sign In with Google"
             android:textColor="@android:color/black"
             />

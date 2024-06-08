@@ -1,4 +1,4 @@
-package com.example.driverapp
+package com.groupf.driverapp
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -11,7 +11,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.driverapp.Model.DriverInfoModel
+import com.example.driverapp.R
+import com.groupf.driverapp.Model.DriverInfoModel
 import com.example.driverapp.databinding.ActivitySplashScreenBinding
 import com.firebase.ui.auth.AuthMethodPickerLayout
 import com.firebase.ui.auth.AuthUI
@@ -100,7 +101,9 @@ class SplashScreenActivity : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     if(dataSnapshot.exists())
                     {
-                        Toast.makeText(this@SplashScreenActivity, "User already register!", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this@SplashScreenActivity, "User already register!", Toast.LENGTH_SHORT).show()
+                        val model = dataSnapshot.getValue(DriverInfoModel::class.java)
+                        goToHomeActivity(model)
                     }
                     else
                     {
@@ -115,8 +118,14 @@ class SplashScreenActivity : AppCompatActivity() {
             })
     }
 
+    private fun goToHomeActivity(model: DriverInfoModel?) {
+        Common.currentUser = model
+        startActivity(Intent(this, DriverHomeActivity::class.java))
+        finish()
+    }
+
     private fun showRegisterLayout() {
-        val builder = AlertDialog.Builder(this,R.style.DialogTheme)
+        val builder = AlertDialog.Builder(this, R.style.DialogTheme)
         val itemView = LayoutInflater.from(this).inflate(R.layout.layout_register,null)
 
         val edt_first_name = itemView.findViewById<View>(R.id.edt_first_name) as TextInputEditText
@@ -161,7 +170,6 @@ class SplashScreenActivity : AppCompatActivity() {
                 model.phoneNumber = edt_phone_number.text.toString()
                 model.rating = 0.0
 
-//                binding.progressBar.visibility = View.VISIBLE
 
                 driverInfoRef.child(FirebaseAuth.getInstance().currentUser!!.uid)
                     .setValue(model)
@@ -174,6 +182,7 @@ class SplashScreenActivity : AppCompatActivity() {
                         Toast.makeText( this@SplashScreenActivity, "Register Successfully", Toast.LENGTH_SHORT).show()
                         dialog.dismiss()
 
+                        goToHomeActivity(model)
                         binding.progressBar.visibility = View.GONE
                     }
             }
