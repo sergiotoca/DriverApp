@@ -12,7 +12,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.driverapp.R
 import com.example.driverapp.databinding.ActivityDriverHomeBinding
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
 class DriverHomeActivity : AppCompatActivity() {
 
@@ -27,11 +26,11 @@ class DriverHomeActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarDriverHome.toolbar)
 
-        binding.appBarDriverHome.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
-        }
+//        binding.appBarDriverHome.fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null)
+//                .setAnchorView(R.id.fab).show()
+//        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_driver_home)
