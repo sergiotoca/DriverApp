@@ -69,5 +69,13 @@ dependencies {
     //FirebaseUi
     implementation(libs.firebase.ui.auth)
 
+    //Database
     implementation(libs.firebase.database)
+
+    //Dexter
+    implementation(libs.dexter)
+
+    //Location
+    implementation(libs.play.services.location)
+
 }
